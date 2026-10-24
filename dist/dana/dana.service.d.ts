@@ -1,0 +1,31 @@
+import { ConfigService } from '@nestjs/config';
+import { LogManager } from '../common/logger/log-manager.service';
+import { PromptService } from '../prompt/prompt.service';
+import type { DanaAbortSignal } from './interfaces/dana-abort-signal.interface';
+import type { DanaModelConfig, DetectIntentRequest } from './interfaces/detect-intent-request.interface';
+import type { DanaStreamRequest } from './interfaces/dana-stream-request.interface';
+import type { GeneratedFileHandler } from './interfaces/generated-file-response.interface';
+import type { TokenHandler } from './types/token-handler.type';
+export declare class DanaService {
+    private readonly configService;
+    private readonly logger;
+    private readonly promptService;
+    selectionMode: string;
+    constructor(configService: ConfigService, logger: LogManager, promptService: PromptService);
+    detectIntent(request: DetectIntentRequest): Promise<string>;
+    createModelConfigs(username: string, requestedModelName?: string): Promise<DanaModelConfig>;
+    stream(request: DanaStreamRequest, onToken: TokenHandler, requestedModelName?: string, onGeneratedFile?: GeneratedFileHandler, signal?: DanaAbortSignal): Promise<string>;
+    private consumeStreamResponse;
+    private aiResponseTimeoutMs;
+    private readStream;
+    private readJsonResponse;
+    private jsonAnswer;
+    private jsonError;
+    private streamErrorMessage;
+    private isJsonResponse;
+    private isObject;
+    private withSlash;
+    private modelName;
+    private minioEndpoint;
+    private logCompleted;
+}

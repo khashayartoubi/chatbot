@@ -1,0 +1,23 @@
+# Stage 1: Dependencies
+FROM registry.agahyarai.local/dana-backend-base:latest AS build
+
+WORKDIR /app/dana-backend
+
+COPY . .
+
+RUN npm run build
+
+FROM docker.agahyarai.local/node:24-alpine
+
+WORKDIR /app/dana-backend
+
+ENV NODE_ENV=production \
+    PORT=5800
+
+COPY package*.json ./
+COPY --from=build /app/dana-backend/node_modules ./node_modules
+COPY --from=build /app/dana-backend/dist ./dist
+
+EXPOSE 5800
+
+CMD ["node", "dist/main.js"]

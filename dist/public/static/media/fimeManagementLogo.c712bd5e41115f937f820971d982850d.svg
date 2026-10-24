@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Data Management Icon</title>
+  <desc id="desc">Stylized pie + bar chart inside a glossy circular badge</desc>
+
+  <defs>
+    <!-- Background radial -->
+    <radialGradient id="radBg" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eaf6ff"/>
+    </radialGradient>
+
+    <!-- Ring gradient -->
+    <linearGradient id="ringGrad" x1="0" x2="1">
+      <stop offset="0%" stop-color="#5fb0ff"/>
+      <stop offset="100%" stop-color="#1f6fbf"/>
+    </linearGradient>
+
+    <!-- Bars gradient -->
+    <linearGradient id="barGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#6fd1ff"/>
+      <stop offset="1" stop-color="#2682d6"/>
+    </linearGradient>
+
+    <!-- Pie slice gradient -->
+    <linearGradient id="pieGrad" x1="0" x2="1">
+      <stop offset="0" stop-color="#5ee389"/>
+      <stop offset="1" stop-color="#24a35b"/>
+    </linearGradient>
+
+    <!-- Soft drop shadow -->
+    <filter id="softDrop" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#1b4f7a" flood-opacity="0.12"/>
+    </filter>
+
+    <!-- Inner subtle highlight -->
+    <radialGradient id="innerShine" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- badge with shadow -->
+  <g filter="url(#softDrop)">
+    <circle cx="80" cy="80" r="66" fill="url(#radBg)" stroke="url(#ringGrad)" stroke-width="6"/>
+  </g>
+
+  <!-- inner shine -->
+  <circle cx="80" cy="80" r="62" fill="url(#innerShine)" opacity="0.6"/>
+
+  <!-- PIE CHART (left) -->
+  <g transform="translate(0,0)">
+    <!-- full circle base -->
+    <circle cx="56" cy="58" r="22" fill="url(#pieGrad)" stroke="#1c5f92" stroke-width="2"/>
+    <!-- small white slice (25%) -->
+    <path d="M56 58 L 79.6 58 A 22 22 0 0 1 56 80 Z" fill="#ffffff" />
+    <!-- outline -->
+    <circle cx="56" cy="58" r="22" fill="none" stroke="#174e79" stroke-width="2.5"/>
+    <!-- inner cutout to create slight donut look -->
+    <circle cx="56" cy="58" r="9.5" fill="rgba(255,255,255,0.06)"/>
+  </g>
+
+  <!-- BARS (right) -->
+  <g transform="translate(0,0)" stroke-linecap="round" stroke-linejoin="round">
+    <!-- baseline -->
+    <rect x="72" y="106" width="56" height="6" rx="3" fill="#174e79" />
+    <!-- bar 1 -->
+    <rect x="78" y="86" width="10" height="20" rx="3" fill="url(#barGrad)" stroke="#184f80" stroke-width="2"/>
+    <!-- bar 2 -->
+    <rect x="94" y="72" width="10" height="34" rx="3" fill="#67cbff" stroke="#184f80" stroke-width="2"/>
+    <!-- bar 3 -->
+    <rect x="110" y="54" width="10" height="52" rx="3" fill="#2b8fe0" stroke="#153f6d" stroke-width="2"/>
+
+    <!-- subtle top highlights for bars -->
+    <rect x="78" y="86" width="10" height="4" rx="3" fill="rgba(255,255,255,0.18)" />
+    <rect x="94" y="72" width="10" height="4" rx="3" fill="rgba(255,255,255,0.16)" />
+    <rect x="110" y="54" width="10" height="4" rx="3" fill="rgba(255,255,255,0.14)" />
+  </g>
+
+  <!-- decorative micro details -->
+  <g opacity="0.14" fill="#0b2340">
+    <circle cx="52" cy="46" r="1.2"/>
+    <circle cx="68" cy="96" r="1.2"/>
+  </g>
+</svg>

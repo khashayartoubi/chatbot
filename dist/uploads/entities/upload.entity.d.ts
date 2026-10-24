@@ -1,0 +1,31 @@
+import type { Relation } from 'typeorm';
+import { Project } from '../../projects/entities/project.entity';
+import { UploadStatus } from '../enums/upload-status.enum';
+import { FileState } from '../enums/file-state.enum';
+import { FileTag } from '../../storage/enums/file-tag.enum';
+export declare class Upload {
+    uploadId: string;
+    fileId: string;
+    username: string;
+    filename: string;
+    projectId?: string;
+    project?: Relation<Project>;
+    sessionId?: string;
+    historyId?: string;
+    originalName: string;
+    mimeType: string;
+    size: number;
+    status: UploadStatus;
+    objectName?: string;
+    bucket: string;
+    tag: FileTag;
+    sourceFileId?: string;
+    sourceFile?: Relation<Upload>;
+    generatedFiles: Relation<Upload[]>;
+    fullPath?: string;
+    state: FileState;
+    error?: string;
+    createdAt: Date;
+    uploadedAt: Date;
+    updatedAt: Date;
+}

@@ -1,0 +1,134 @@
+services:
+  dana-backend:
+    image: registry.agahyarai.local/dana-backend:latest
+    container_name: dana-backend
+    restart: unless-stopped
+    ports:
+      - "${DANA_PORT:-5800}:5800"
+    env_file:
+      - .env
+    environment:
+      HOST_IP: ${HOST_IP:-}
+      DB_HOST: postgres
+      DB_PORT: 5432
+    volumes:
+      - upload_temp:/tmp/dana-uploads
+      - ./images:/usr/share/nginx/html/images
+      - ./locales:/usr/share/nginx/html/locales
+      - ./config/chnageLog.js:/usr/share/nginx/html/chnageLog.js
+      - ./config/configFile.js:/usr/share/nginx/html/configFile.js
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - dana-network
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "wget --quiet --spider http://localhost:5800/chat/api/health",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    labels:
+      elk_logs: "true"
+
+  dana-front:
+    image: registry.agahyarai.local/chatbot-front-new:latest
+    container_name: dana-front
+    restart: always
+    #    env_file: .env.v2
+    env_file:
+      - .env
+    ports:
+      - "9004:9004"
+    volumes:
+      - ./public/images:/usr/share/nginx/html/images
+      - ./public/locales:/usr/share/nginx/html/locales
+      # - ./public/config/chnageLog.js:/usr/share/nginx/html/chnageLog.js
+      - ./public/configFile.js:/usr/share/nginx/html/configFile.js
+    networks:
+      - dana-network
+
+  postgres:
+    image: registry.agahyarai.local/postgres:16
+    container_name: dana-backend-postgres
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - dana-network
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          'PGPASSWORD="$${POSTGRES_PASSWORD}" psql -h 127.0.0.1 -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}" -tAc "SELECT 1" | grep -qx "1"',
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  rabbitmq:
+    image: registry.agahyarai.local/rabbitmq:4.1-management
+    container_name: dana-backend-rabbitmq
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${RABBITMQ_PORT:-5673}:5672"
+      - "${RABBITMQ_MANAGEMENT_PORT:-15673}:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - dana-network
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    labels:
+      elk_logs: "true"
+
+#  minio:
+#    image: docker.agahyarai.local/minio/minio:latest
+#    container_name: dana-backend-minio
+#    restart: unless-stopped
+#    command: server /data --console-address ":9001"
+#    env_file:
+#      - .env.v2
+#    ports:
+#      - "${MINIO_HOST_PORT:-9100}:9000"
+#      - "${MINIO_CONSOLE_PORT:-9102}:9001"
+#    environment:
+#      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY}
+#      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY}
+#    volumes:
+#      - minio_data:/data
+#    networks:
+#      - dana-network
+#    healthcheck:
+#      test: ["CMD", "curl", "--fail", "http://localhost:9000/minio/health/live"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 10
+
+volumes:
+  postgres_data:
+  rabbitmq_data:
+  upload_temp:
+
+networks:
+  dana-network:
+    driver: bridge

@@ -1,0 +1,51 @@
+<svg width="328" height="188" viewBox="0 0 328 188" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="327" height="187" rx="7.5" stroke="#E6E8E9"/>
+<rect x="4" y="4" width="320" height="180" rx="8" fill="url(#paint0_linear_8620_6608)"/>
+<g clip-path="url(#clip0_8620_6608)">
+<rect x="4" y="4" width="320" height="180" rx="8" fill="#F6F7F8"/>
+<rect x="249" y="4" width="45" height="180" fill="#FEFEFE"/>
+<rect x="254" y="31" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<rect x="254" y="40" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<rect x="254" y="49" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<rect x="254" y="67" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<rect x="254" y="76" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<rect x="254" y="85" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<rect x="254" y="94" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<rect x="254" y="173" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<g filter="url(#filter0_f_8620_6608)">
+<circle cx="150" cy="173" r="76" fill="#C1D9E8"/>
+</g>
+<rect x="209" y="10" width="34" height="10" rx="5" fill="#B1B6BA"/>
+<rect x="278" y="10" width="10" height="10" rx="5" fill="#B1B6BA"/>
+<rect x="254" y="10" width="10" height="10" rx="5" fill="#B1B6BA"/>
+<rect x="10" y="10" width="9" height="10" rx="4.5" fill="#B1B6BA"/>
+<rect x="21" y="10" width="9" height="10" rx="4.5" fill="#B1B6BA"/>
+<rect x="32" y="10" width="34" height="10" rx="5" fill="#B1B6BA"/>
+<rect x="160" y="37" width="83" height="24" rx="8" fill="#B1B6BA"/>
+<rect x="104" y="138" width="139" height="14" rx="7" fill="#B1B6BA"/>
+<line x1="242.5" y1="74.5" x2="160.5" y2="74.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="242.5" y1="79.5" x2="145.5" y2="79.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="242.5" y1="85.5" x2="145.5" y2="85.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="242.5" y1="91.5" x2="131.5" y2="91.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="242.5" y1="97.5" x2="145.5" y2="97.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="242.5" y1="103.5" x2="124.5" y2="103.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="242.5" y1="109.5" x2="145.5" y2="109.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="242.5" y1="115.5" x2="112.5" y2="115.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="242.5" y1="121.5" x2="124.5" y2="121.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="242.5" y1="127.5" x2="124.5" y2="127.5" stroke="#576269" stroke-linecap="round"/>
+</g>
+<defs>
+<filter id="filter0_f_8620_6608" x="-73.6" y="-50.6" width="447.2" height="447.2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="73.8" result="effect1_foregroundBlur_8620_6608"/>
+</filter>
+<linearGradient id="paint0_linear_8620_6608" x1="16.0755" y1="19.6123" x2="413.249" y2="210.779" gradientUnits="userSpaceOnUse">
+<stop stop-color="#265E81"/>
+<stop offset="1" stop-color="#A3C7DD"/>
+</linearGradient>
+<clipPath id="clip0_8620_6608">
+<rect x="4" y="4" width="320" height="180" rx="8" fill="white"/>
+</clipPath>
+</defs>
+</svg>

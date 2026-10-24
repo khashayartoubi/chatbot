@@ -1,0 +1,15 @@
+export enum SelectionMode {
+  TRANSLATOR = 'translator',
+  GENERAL_CHAT = 'generalChat',
+  EMBEDDER = 'embedder',
+  KEYWORD_EXTRACTOR = 'keywordExtractor',
+  MINUTES_GENERATOR = 'minutesGenerator',
+  NER = 'ner',
+  OCR = 'ocr',
+  RAG = 'rag',
+  SENTIMENT_ANALYZER = 'sentimentAnalyzer',
+  SUMMARIZER = 'summarizer',
+  LETTER = 'letter',
+  STT = 'stt',
+  REPORTER = 'reporter',
+}

@@ -1,0 +1,47 @@
+<svg width="294" height="186" viewBox="0 0 294 186" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="3" y="3" width="287.333" height="180" rx="8" fill="#E6E8E9"/>
+<g clip-path="url(#clip0_8620_6231)">
+<rect x="3" y="3" width="287.333" height="180" rx="8" fill="#F6F7F8"/>
+<rect x="248" y="3" width="45" height="180" fill="#FEFEFE"/>
+<rect x="253" y="30" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<rect x="253" y="39" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<rect x="253" y="48" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<rect x="253" y="66" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<rect x="253" y="75" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<rect x="253" y="84" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<rect x="253" y="93" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<rect x="253" y="172" width="34" height="6" rx="3" fill="#B1B6BA"/>
+<g filter="url(#filter0_f_8620_6231)">
+<circle cx="133" cy="172" r="76" fill="#C1D9E8"/>
+</g>
+<rect x="208" y="9" width="34" height="10" rx="5" fill="#B1B6BA"/>
+<rect x="277" y="9" width="10" height="10" rx="5" fill="#B1B6BA"/>
+<rect x="253" y="9" width="10" height="10" rx="5" fill="#B1B6BA"/>
+<rect x="9" y="9" width="9" height="10" rx="4.5" fill="#B1B6BA"/>
+<rect x="20" y="9" width="9" height="10" rx="4.5" fill="#B1B6BA"/>
+<rect x="31" y="9" width="34" height="10" rx="5" fill="#B1B6BA"/>
+<rect x="159" y="36" width="83" height="24" rx="8" fill="#265E81"/>
+<rect x="103" y="137" width="139" height="14" rx="7" fill="#265E81"/>
+<line x1="241.5" y1="73.5" x2="159.5" y2="73.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="241.5" y1="78.5" x2="144.5" y2="78.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="241.5" y1="84.5" x2="144.5" y2="84.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="241.5" y1="90.5" x2="130.5" y2="90.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="241.5" y1="96.5" x2="144.5" y2="96.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="241.5" y1="102.5" x2="123.5" y2="102.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="241.5" y1="108.5" x2="144.5" y2="108.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="241.5" y1="114.5" x2="111.5" y2="114.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="241.5" y1="120.5" x2="123.5" y2="120.5" stroke="#576269" stroke-linecap="round"/>
+<line x1="241.5" y1="126.5" x2="123.5" y2="126.5" stroke="#576269" stroke-linecap="round"/>
+</g>
+<rect x="1.5" y="1.5" width="290.333" height="183" rx="9.5" stroke="#E6E8E9" stroke-width="3"/>
+<defs>
+<filter id="filter0_f_8620_6231" x="-90.6" y="-51.6" width="447.2" height="447.2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="73.8" result="effect1_foregroundBlur_8620_6231"/>
+</filter>
+<clipPath id="clip0_8620_6231">
+<rect x="3" y="3" width="287.333" height="180" rx="8" fill="white"/>
+</clipPath>
+</defs>
+</svg>

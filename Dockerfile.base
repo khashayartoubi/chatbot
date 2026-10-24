@@ -1,0 +1,8 @@
+FROM docker.agahyarai.local/node:24-alpine
+
+WORKDIR /app/dana-backend
+
+COPY .npmrc .
+COPY package*.json ./
+
+RUN npm ci
